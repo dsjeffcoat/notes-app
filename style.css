@@ -13,7 +13,7 @@
 }
 
 body {
-   background-color: var(--color-palette-4);
+   background-color: var(--color-palette-2);
    font-family: 'Maven Pro', sans-serif;
    display: flex;
    flex-wrap: wrap;
@@ -25,7 +25,7 @@ body {
     position: fixed;
     top: 1rem;
     right: 1rem;
-    background-color: var(--color-palette-3);
+    background-color: var(--color-palette-5);
     border: none;
     border-radius: 3px;
     padding: 0.5rem 1rem;
@@ -42,7 +42,7 @@ body {
 }
 
 .note .tools {
-    background-color: var(--color-palette-3);
+    background-color: var(--color-palette-5);
     display: flex;
     justify-content: flex-end;
     padding: 0.5rem;
