@@ -1,6 +1,8 @@
 // Declarations 
 
 const addBtn = document.getElementById('add')
+const notes = JSON.parse(localStorage.getItem('notes'))
+
 
 // Event Listeners 
 
@@ -36,6 +38,8 @@ function addNewNote(text = '') {
 
     delBtn.addEventListener('click', () => {
         note.remove()
+
+        updateLS()
     })
 
     editBtn.addEventListener('click', () => {
@@ -47,7 +51,40 @@ function addNewNote(text = '') {
         const { value } = e.target
     
         mainEl.innerHTML = marked(value)
+
+        updateLS()
     })
 
     document.body.appendChild(note)
 }
+
+// Local Storage Setup 
+
+function updateLS() {
+    const notesText = document.querySelectorAll('textarea')
+
+    const notes = []
+    
+    notesText.forEach(note => notes.push(note.value))
+
+    // console.log(notes)
+    localStorage.setItem('notes', JSON.stringify(notes))
+}
+
+// console.log(notes)
+
+if(notes) {
+    notes.forEach(note => addNewNote(note))
+}
+
+// Local Storage API calls:
+// - .setItem()
+// - .getItem()
+// - .removeItem()
+// 
+// All arguments/parameters have to be stringified
+
+// localStorage.setItem('name', 'Diarte')
+// localStorage.getItem('name')
+// localStorage.removeItem('name')
+
